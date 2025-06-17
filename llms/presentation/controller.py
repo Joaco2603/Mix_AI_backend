@@ -1,5 +1,5 @@
 from flask import jsonify, request
-from llm_backend.llms.infraestructure.adapters.langchain.langchain_adapter import LangchainLlmClient
+from llms.infraestructure.adapters.langchain.langchain_adapter import LangchainLlmClient
 
 class LLMController:
     def __init__(self):

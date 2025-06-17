@@ -4,3 +4,4 @@ python-dotenv
 langchain-google-genai
 langchain_community
 mypy
+langgraph
