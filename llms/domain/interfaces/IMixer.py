@@ -6,9 +6,9 @@ class IMixer(ABC): # Esto sería la interfaz de tu dominio
         pass
 
     @abstractmethod
-    def adjust_eq(input: str) -> str:
+    def adjust_eq(self, input: str) -> str:
         pass
 
     @abstractmethod
-    def mute_channel(input: str) -> str:
+    def mute_channel(self, input: str) -> str:
         pass
