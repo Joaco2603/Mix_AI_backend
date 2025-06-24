@@ -1,14 +1,14 @@
 from abc import ABC, abstractmethod
 
-class IMixer(ABC): # Esto sería la interfaz de tu dominio
+class IMixer(ABC):
     @abstractmethod
-    def adjust_volume(self, input_str: str) -> str:
+    def adjust_volume(self, channel: int, level: str) -> str:
         pass
 
     @abstractmethod
-    def adjust_eq(self, input: str) -> str:
+    def adjust_eq(self, channel: int, frequency: str, action: str) -> str:
         pass
 
     @abstractmethod
-    def mute_channel(self, input: str) -> str:
+    def mute_channel(self, channel: int) -> str:
         pass

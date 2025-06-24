@@ -1,1 +1,90 @@
-/.env
+# Byte-compiled / optimized / dll files
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+*.egg-info/
+.eggs/
+
+# Distribution / packaging
+.Python
+build/
+dist/
+develop-eggs/
+sdist/
+wheelhouse/
+*.egg
+*.whl
+
+# C extensions
+*.so
+
+# Installer logs
+pip-log.txt
+pip-delete-this-file.txt
+
+# Unit test / coverage
+.coverage
+.pytest_cache/
+htmlcov/
+.tox/
+
+# Editors
+.vscode/        # Visual Studio Code
+.idea/          # PyCharm / IntelliJ IDEA
+*.sublime-project
+*.sublime-workspace
+.DS_Store       # macOS
+Thumbs.db       # Windows
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+profile_default/
+ipython_config.py
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+/bin/activate
+/bin/activate.csh
+/bin/activate.fish
+/bin/pip
+/bin/pip3
+/bin/python
+/bin/python3
+/include/
+/lib/
+/lib64/
+/pyvenv.cfg
+/share/
+/Scripts/
+/Lib/
+/DLLs/
+
+# Miscelaneous
+*.log
+*.sqlite3
+*.db
+*.csv
+*.json
+*.env             # Variables de entorno
+.flaskenv         # Variables de entorno de Flask
+instance/         # Carpeta de instancia de Flask
+media/            # Archivos subidos por usuarios (Django/Flask)
+static_cdn/       # Archivos estáticos de CDN (Django)
+tmp/
+temp/
+
+# Dependencias (si no quieres controlarlas con Git, aunque normalmente sí se hace)
+# Puede ser útil si manejas dependencias muy grandes o binarios específicos
+# de la plataforma, pero para la mayoría de los casos, requirements.txt es suficiente.
+# Puedes descomentar lo siguiente si es tu caso:
+# node_modules/
+# bower_components/
+
+# Archivos específicos del usuario o máquina
+# Puedes agregar aquí archivos que solo te interesen a ti y no al proyecto en general
+# my_secret_api_key.txt

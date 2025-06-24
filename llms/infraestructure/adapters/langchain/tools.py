@@ -1,33 +1,41 @@
 from langchain.tools import tool
+from llms.domain.interfaces.IMixer import IMixer
 
-@tool
-def adjust_volume(input: str) -> str:
-    """
-    Ajusta el volumen del canal.
-    Formato esperado: '2 bajo' (canal nivel)
-    """
-    try:
-        channel, level = input.strip().split()
+class Mixer(IMixer):
+    def __init__(self) -> None:
+        pass
+
+    @tool
+    def adjust_volume(channel, level: str) -> str:
+        """
+        Ajusta el volumen de un canal específico.
+            - channel: número de canal
+            - level: nivel como 'bajo', 'medio', 'alto'
+        """
+        
         return f"✅ Volumen del canal {channel} ajustado a {level}"
-    except Exception:
-        return "❌ Formato incorrecto. Usa: '<canal> <nivel>'"
-
-@tool
-def adjust_eq(input: str) -> str:
-    """
-    Ajusta la ecualización.
-    Formato: '2 graves subir'
-    """
-    try:
-        channel, freq, action = input.strip().split()
-        return f"✅ EQ canal {channel}: {freq} {action}"
-    except Exception:
-        return "❌ Formato inválido. Usa: '<canal> <frecuencia> <acción>'"
-
-@tool
-def mute_channel(input: str) -> str:
-    """Silencia el canal especificado (ej: '3')"""
-    return f"✅ Canal {input.strip()} silenciado"
 
 
-tools = [adjust_volume, adjust_eq, mute_channel]
+    @tool
+    def adjust_eq(channel, frequency: str, action: str) -> str:
+        """
+        Ajusta la ecualización del canal.
+            - channel: número de canal
+            - frequency: 'graves', 'medios', 'agudos'
+            - action: 'subir' o 'bajar'
+        """
+        return f"✅ EQ canal {channel}: {frequency} {action}"
+
+
+    @tool
+    def mute_channel(channel) -> str:
+        """Silencia el canal especificado"""
+        return f"✅ Canal {channel} silenciado"
+
+    def get_all_tools(self):
+        return [self.adjust_volume, self.adjust_eq, self.mute_channel]
+
+
+
+
+

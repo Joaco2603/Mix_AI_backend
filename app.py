@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask
 # Import dotenv and load enviroment variables
 from dotenv import load_dotenv
 
